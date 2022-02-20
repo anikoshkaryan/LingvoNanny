@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=fef7e3c9-583a-4e95-a050-8cee33b80427&lang=ru_RU" type="text/javascript"></script>
+   <link rel="stylesheet" href="../css/style.css">
+   <title>Главная</title>
+   <script type="text/javascript">
+      ymaps.ready(function () {
+  var myMap = new ymaps.Map('map', {
+          center: [55.777550, 37.649445],
+          zoom: 15
+      }, {
+          searchControlProvider: 'yandex#search'
+      }),
+
+      // Создаём макет содержимого.
+      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+      ),
+
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+      }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: '../images/map_mark.png',
+          // Размеры метки.
+          iconImageSize: [82, 93],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+      }),
+
+      myPlacemarkWithContent = new ymaps.Placemark([55.777550, 37.649445], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+      }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/ball.png',
+          // Размеры метки.
+          iconImageSize: [48, 48],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-24, -24],
+          // Смещение слоя с содержимым относительно слоя с картинкой.
+          iconContentOffset: [15, 15],
+          // Макет содержимого.
+          iconContentLayout: MyIconContentLayout
+      });
+
+  myMap.geoObjects
+      .add(myPlacemark)
+      .add(myPlacemarkWithContent);
+});
+  </script>
+
+</head>
+<body>
+<div class="lingvo_nanny_main_page_wrapper" id="lingvo_nanny_four_page">
+
+ 
+   <header class="header">
+      <div class="header_wrapper">
+         <div class="header_logo_nav_wrapper">
+            <div class="header_logo_wrapper">
+              <a href="" class="header_logo">
+                  <img src="../images/header_logo.svg" alt="">
+              </a>
+            </div>
+            <nav class="header_logo_nav">
+             <ul class="header_logo_ul_list">
+                <li class="header_logo_ul_li">
+                  <a href="" class="header_logo_link">О нас </a>
+                </li>
+                <li class="header_logo_ul_li"> 
+                   <a href="" class="header_logo_link">Отзывы</a>
+                </li>
+                <li class="header_logo_ul_li">
+                   <a href="" class="header_logo_link">Условия работы</a>
+                </li>
+                <li class="header_logo_ul_li">
+                   <a href="" class="header_logo_link">Контакты</a>
+                </li>
+             </ul>
+            </nav>
+          </div>
+          <div class="header_call_link_whatsapp_wrapper">
+            <div class="header_call_link_wrapper">
+              <a href="tel:+7 (495) 120-30-55" class="header_call_link">
+                +7 (495) 120-30-55
+              </a>
+            </div>
+            <div class="header_whatsapp_link_wrapper">
+              <a href="https://www.whatsapp.com/" class="header_whatsapp_link">
+                <img src="../images/link.svg" alt="">
+              </a>
+            </div>
+              
+          </div>
+      </div>
+      <div class="mobile_header_wrapper">
+         <div class="header_logo_wrapper">
+            <a href="" class="header_logo">
+                <img src="../images/header_logo.svg" alt="">
+            </a>
+          </div>
+          <div class="mobile_call_link_hamburger_menu_wrapper">
+             <a href="tel:+7 (495) 120-30-55" class="mobile_call_link">+7 (495) 120-30-55</a>
+             <div class="hamburger-menu ">
+               <span class="hamburger-menu-line"></span>
+               <span class="hamburger-menu-line"></span>
+               <span class="hamburger-menu-line"></span>
+           </div>
+           <div class="mobile_version">
+              <div class="mobile_version_wrapper">
+                 <div class="mobile_close">
+                    <img src="../images/arrow_mobile.svg" alt="">
+                 </div>
+               <ul class="header_logo_ul_list">
+                  <li class="header_logo_ul_li">
+                     <a href="" class="header_logo_link">Главная</a>
+                   </li>
+                  <li class="header_logo_ul_li">
+                    <a href="" class="header_logo_link">О нас </a>
+                  </li>
+                  <li class="header_logo_ul_li"> 
+                     <a href="" class="header_logo_link">Отзывы</a>
+                  </li>
+                  <li class="header_logo_ul_li">
+                     <a href="" class="header_logo_link">Условия</a>
+                  </li>
+                  <li class="header_logo_ul_li">
+                     <a href="" class="header_logo_link">Контакты</a>
+                  </li>
+                  <li class="header_logo_ul_li">
+                     <a href="" class="header_logo_link">Русские няни</a>
+                  </li>
+                  <li class="header_logo_ul_li">
+                     <a href="" class="header_logo_link">Иностранные гувернантки</a>
+                  </li>
+                  
+               </ul>
+              </div>
+           </div>
+          </div>
+      </div>
+  </header>
+
+<main>
+   <section class="top">
+      <div class="top_wrapper">
+         <div class="top_img">
+              <img src="../images/mobile_top_img3.png" alt="">
+         </div>
+         <div class="top_info_box">
+              <h1 class="top_title">
+               За <span>48 часов</span> подберём квалифицированную  няню, гувернантку или частного учителя из:
+              </h1>
+              <div class="countries_names_flags_wrapper">
+                 <div class="country_name_flag" id="country_name_flag_item1">
+                     <div class="country_flag">
+                        <img src="../images/russia.svg" alt="">
+                     </div>
+                     <p class="country_name">России</p>
+                 </div>
+                 <div class="country_name_flag" id="country_name_flag_item2">
+                     <div class="country_flag">
+                        <img src="../images/philippines.svg" alt="">
+                     </div>
+                     <p class="country_name">Филиппин</p>
+                 </div>
+                 <div class="country_name_flag" id="country_name_flag_item3">
+                     <div class="country_flag">
+                        <img src="../images/united_kingdom.svg" alt="">
+                     </div>
+                     <p class="country_name">Великобритании</p>
+                 </div>
+                 <div class="country_name_flag" id="country_name_flag_item4">
+                     <div class="country_flag">
+                        <img src="../images/france.svg" alt="">
+                     </div>
+                     <p class="country_name">Франции</p>
+                 </div>
+                 <div class="country_name_flag" id="country_name_flag_item5">
+                     <div class="country_flag">
+                        <img src="../images/china.svg" alt="">
+                     </div>
+                     <p class="country_name">Китая</p>
+                 </div>
+              </div>
+              <div class="top_info_svg_wrapper">
+                <div class="top_svg">
+                  <svg width="166" height="174" viewBox="0 0 166 174" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="44.627" width="127" height="141" transform="rotate(18.4515 44.627 0)" fill="url(#pattern0)"/>
+                    <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_1_3307" transform="translate(0 -0.00157978) scale(0.00473934 0.00426876)"/>
+                    </pattern>
+                    <image id="image0_1_3307" width="211" height="235" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANMAAADrCAYAAADzLqMZAAABVGlDQ1BEaXNwbGF5IFAzAAAoz62NPyiEcRyHn58/XR2KvG4w/cqfDIgzsBjuKBF1ZLj3TO+994d6nV/v+xY3KRajkkGZGKyMMjAYJAOJDCKrkZLi+hmO7iwmz/J9evrUFypaLaWcKmA+57tTI1EZNxMy8ESAAHWEkJbtqUgsNg7wc3/zdosAuO6ylHLOmzdX2pbrJwa2Gm+unptW+JtgKu3ZwCeQtpXrg0gBLYu+8kGsAYYbNxMgtgEjW/R9wEgW/RQw3OmpIRB3gLRnrRSId6AzWdazZf79F6BmeM5TjpWXsT7+HT+95AMMLai8O5ed9WVEKSctR3N2d6cM9/T2Q9xMyOL6dRIBiNBFqa0+wuCx1vqo1MaO4aAfgoel1jEADTVwdqgs1wKgEqjIZOBlD+pMaLyE4IyX6QsDIGqjUP2g9Ws7BDagsK71x47WhV2ovIeT3BcVIWXuBhF5dgAAAAlwSFlzAAALEwAACxMBAJqcGAAABfBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAzIDc5LjE2NDUyNywgMjAyMC8xMC8xNS0xNzo0ODozMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIyLjEgKE1hY2ludG9zaCkiIHhtcDpDcmVhdGVEYXRlPSIyMDIxLTA4LTIwVDE1OjQzOjExKzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIxLTA4LTIwVDE1OjQzOjExKzAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMS0wOC0yMFQxNTo0MzoxMSswMzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3ZDA0ZTc0NC0wNDc2LTQzODMtYWVkMC0xZDg2ZDYxYTAyNDYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpkNDI1Nzk3OS0xMTZlLTg5NGUtYjA4MC0xOTFlN2Y4NjUwNGUiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0ZmNmODUwOC01YjdlLTQxYWMtYWU1Yi1mMmYzNjNkZGI2ZDQiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0iRGlzcGxheSBQMyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NGZjZjg1MDgtNWI3ZS00MWFjLWFlNWItZjJmMzYzZGRiNmQ0IiBzdEV2dDp3aGVuPSIyMDIxLTA4LTIwVDE1OjQzOjExKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjIuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6N2QwNGU3NDQtMDQ3Ni00MzgzLWFlZDAtMWQ4NmQ2MWEwMjQ2IiBzdEV2dDp3aGVuPSIyMDIxLTA4LTIwVDE1OjQzOjExKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90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"/>
+                    </defs>
+                    </svg>
+                    
+                </div>
+                 <p class="top_info1">
+                  Лучший домашний персонал из базы более 10 000 человек в РФ, США и Европе
+                 </p>
+              </div>
+              <div class="top_consultation_info">
+                 <div class="top_consultation_title_wrapper">
+                    <p class="top_consultation_title">Получить бесплатную консультацию</p>
+                 </div>
+                 <div class="top_consultation_info_box">
+                      <div class="top_consultation_info_img_item">
+                             <div class="top_consultation_img first_top_img">
+                                <img src="../images/top_const_img1.svg" alt="">
+                             </div>
+                             <p class="top_consultation_box_info">
+                               Более 3000 довольных
+                              семей за 5 лет работы
+                            </p>
+                      </div>
+                      <div class="top_consultation_info_img_item">
+                        <div class="top_consultation_img second_top_img">
+                           <img src="../images/top_const_img2.svg" alt="">
+                        </div>
+                        <p class="top_consultation_box_info second_top_child">
+                          Бесплатные пробные 
+                          дни и гарантия замены
+                       </p>
+                 </div>
+                 <div class="top_consultation_info_img_item">
+                  <div class="top_consultation_img third_top_img">
+                     <img src="../images/top_oonst_img3.svg" alt="">
+                  </div>
+                  <p class="top_consultation_box_info last_top_child">
+                    Работаем 
+                    7 дней/неделю
+                 </p>
+                 </div>
+                 </div>
+              </div>
+              <div class="top_icon">
+               <img src="../images/vector_mobile.svg" alt="">
+             </div>
+          </div>   
+      </div>
+  </section>
+  <section class="the_main_directions_of_our_activity">
+     <div class="the_main_directions_of_our_activity_wrapper">
+      <div  class="the_main_directions_of_our_activity_img1">
+         <img src="../images/round1.png" alt="">
+       </div>
+       <div class="the_main_directions_of_our_activity_img2">
+           <img src="../images/round2.png" alt="">
+       </div>
+       <div class="the_main_directions_of_our_activity_img3">
+          <img src="../images/round3.png" alt="">
+       </div>
+       <div class="our_nannies_line_title_wrapper">
+          <h1 class="our_nannies_title">Наши ЛингвоНяни</h1>
+          <div class="our_nannies_line"></div>
+       </div>
+       <div class="our_nannies_advantages_items_wrapper">
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">1</p>
+             <p class="our_nannies_advantages_item_info">
+                Являются носителями чистого иностранного языка 
+             </p>
+          </div>
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">2</p>
+             <p class="our_nannies_advantages_item_info">
+                5+ лет международного опыта с детьми
+                с любым уровнем владения языком  
+            </p>
+          </div>
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">3</p>
+             <p class="our_nannies_advantages_item_info">
+                Работали в статусных семьях и имеют хорошие проверенные рекомендации
+             </p>
+          </div>
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">4</p>
+             <p class="our_nannies_advantages_item_info">
+                Обладают престижными сертификатами
+                по обучению детей иностранному языку
+                и общему развитию
+             </p>
+          </div>
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">5</p>
+             <p class="our_nannies_advantages_item_info">
+                Подготовят
+                к международным экзаменам и поступлению
+                в иностранные
+                школы/вузы
+             </p>
+          </div>
+          <div class="our_nannies_advantages_item">
+             <p class="our_nannies_advantages_item_num">6</p>
+             <p class="our_nannies_advantages_item_info">
+                Общаются
+                с ребёнком только
+                на иностранном языке и создают дома языковую среду
+             </p>
+          </div>
+       </div>
+      
+     </div>
+  </section>
+  <section class="lingvonanny_advantages">
+      <div class="lingvonanny_advantages_wrapper">
+        <div class="lingvonanny_advantages_line_title_logo_wrapper">
+         <div class="lingvonanny_advantages_logo_title_wrapper">
+             <div class="lingvonanny_advantages_logo">
+                <img src="../images/lingvo_logo.png" alt="">
+             </div>
+             <h1 class="lingvonanny_advantages_title">
+              международное агентство по подбору русского домашнего персонала и гувернанток – носителей инностранных языков
+             </h1>
+         </div>
+         <div class="lingvonanny_advantages_line"></div>
+        </div> 
+        <div class="lingvonanny_advantages_items_wrapper">
+           <div class="lingvonanny_advantages_item">
+              <div class="lingvonanny_advantages_item_img">
+                 <img src="../images/lingvo_img1.svg" alt="">
+              </div>
+                <div class="lingvonanny_advantages_info_title_wrapper">
+                   <p class="lingvonanny_advantages_item_title">Вы можете доверить нам самое дорогое</p>
+                   <p class="lingvonanny_advantages_item_info">
+                    За 5 <span>лет</span>  работы мы сделали счастливыми более <span>3500 семей,</span>  среди которых ряд участников списка <span>Forbes,</span>  политиков и звёзд шоу-бизнеса.
+                   </p>
+                </div>
+
+           </div>
+           
+           <div class="lingvonanny_advantages_item">
+              <div class="lingvonanny_advantages_item_img">
+                <img src="../images/lingvo_img3.svg" alt="">
+              </div>
+                <div class="lingvonanny_advantages_info_title_wrapper">
+                   <p class="lingvonanny_advantages_item_title">Вы точно не ошибётесь с выбором кандидата</p>
+                   <p class="lingvonanny_advantages_item_info">
+                    Проведём для Вас <span>3-х</span>  этапный отбор кандидатов по <span>10 техничеким</span>  и <span>10 психологическим</span>  критериям из собственной базы более <span>10 000 человек</span>  с проверенными рекомендациями и документами.
+                   </p>
+                </div>
+
+           </div>
+           
+           <div class="lingvonanny_advantages_item">
+            <div class="lingvonanny_advantages_item_img">
+              <img src="../images/lingvo_img2.svg" alt="">
+          </div>
+              <div class="lingvonanny_advantages_info_title_wrapper">
+                 <p class="lingvonanny_advantages_item_title">Вы получите самые лучшие агентские условия</p>
+                 <p class="lingvonanny_advantages_item_info">
+                  Подбор «под ключ» от первого звонка и собеседований до подписания договора с няней, поиск за  <span>48 часов,</span>  никаких предоплат, бесплатные пробные дни и <span>гарантия замены</span>  в течении года.
+
+                 </p>
+              </div>
+
+         </div>
+           <div class="lingvonanny_advantages_item">
+              <div class="lingvonanny_advantages_item_img">
+                 <img src="../images/lingvo_img4.svg" alt="">
+              </div>
+                <div class="lingvonanny_advantages_info_title_wrapper">
+                   <p class="lingvonanny_advantages_item_title">Найдём для вас домашний персонал
+                    в любую точку мира</p>
+                   <p class="lingvonanny_advantages_item_info">
+                    Мы можем найти для вас любой 
+                    русско/англоговорящий персонал в <span>РФ</span>  или специально привезти его сюда, а так же отправить персонал к Вам в <span>Европу/США</span>  или найти его уже в вашей локации.
+                   </p>
+                </div>
+
+           </div>
+        </div>
+        <div class="lingvonanny_advantages_second_items_wrapper">
+            <div class="lingvonanny_advantages_second_item">
+               <p class="lingvonanny_advantages_second_item_title">5</p>
+               <p class="lingvonanny_advantages_second_item_info">лет опыта</p>
+            </div>
+            <div class="lingvonanny_advantages_second_item">
+               <p class="lingvonanny_advantages_second_item_title">10 000</p>
+               <p class="lingvonanny_advantages_second_item_info">кандидатов</p>
+            </div>
+            <div class="lingvonanny_advantages_second_item">
+               <p class="lingvonanny_advantages_second_item_title">4500</p>
+               <p class="lingvonanny_advantages_second_item_info">сотрудников подобраны нами</p>
+            </div>
+            <div class="lingvonanny_advantages_second_item">
+               <p class="lingvonanny_advantages_second_item_title">92%s</p>
+               <p class="lingvonanny_advantages_second_item_info">клиентов советуют нас</p>
+            </div>
+            
+        </div>
+      </div>
+  </section>
+  <section class="feedbacks">
+  
+     <div class="feedbacks_wrapper">
+        <div class="feedbacks_img1">
+      <img src="../images/icon1.png" alt="">
+    </div>
+    <div class="feedbacks_img2">
+      <img src="../images/icon2.png" alt="">
+    </div>
+    <div class="feedbacks_img3">
+      <img src="../images/icon3.png" alt="">
+    </div> 
+        <div class="feedbacks_title_line_wrapper">
+           <h1 class="feedbacks_title">Отзывы наших клиентов</h1>
+           <div class="feedbacks_line"></div>
+
+        </div>
+        <div class="feedbacks_slider_btns_wrapper">
+          <!-- Slider main container -->
+            <div class="swiper" id="feedbacks_slider">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="feedbacks_slider_item">
+                        <div class="feedback_slider_item_img">
+                           <img src="../images/slider_img1.png" alt="">
+                        </div>
+                        <div class="feedback_slider_item_info_box">
+                        <p class="feedback_slider_item_title">Регина Тодоренко - телеведущая</p>
+                        <p class="feedback_slider_item_title">Влад Топалов - артист, предприниматель
+                        </p>
+                        <p class="feedback_slider_item_info first_slider_item_info">"Если вы ищете няню, репетитора или любого другого помощника по дому, могу порекомендовать Linvonanny, куда мы с Владом обратились, они нам очень помогли найти хорошую няню. Можно также к ним обратиться, если вы хотите, чтобы ваш ребеночек был билингвальным - они помогут найти няню из Англии, Китая, Франции и откуда угодно" - Регина.  </p>
+                        <button class="feedback_read_more_btn"> Читать полностью....</button>
+                      <div class="feedback_slider_item_user_instagram_links_video_wrapper">
+                        <div class="feedback_slider_item_user_instagram_links_wrapper">
+                          <a href="@reginatodorenko" class="feedback_slider_item_user_instagram_link">
+                           <img src="../images/instagram_icon.svg" alt="">
+                            @reginatodorenko</a>
+                          <a href="@vladtopalov" class="feedback_slider_item_user_instagram_link">
+                            <img src="../images/instagram_icon.svg" alt="">
+                            @vladtopalov</a>
+                        </div>
+                         <a href="" class="slider_item_user_video_feedback">cмотреть видео-отзыв</a>  
+                       </div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="feedbacks_slider_item">
+                       <div class="feedback_slider_item_img">
+                          <img src="../images/slider_img2.png" alt="">
+                       </div>
+                       <div class="feedback_slider_item_info_box">
+                       <p class="feedback_slider_item_title">Игорь Сивов – предприниматель, общественный деятель </p>
+                       <p class="feedback_slider_item_title">Нюша – певица
+                       </p>
+                       <div class="feedback_read_more_btn_info_wrapper">
+                         <p class="feedback_slider_item_info"> У нашей маленькой дочки няня с первых дней и я, конечно же, хочу поблагодарить наше агентство LingvoNannу, которые нам подобрали няню с первого дня. Сейчас у нас не просто няня, а преподаватель, которая знает не только как посидеть с ребенком, чтобы он не плакал, а как развивать. </p>
+                          <button class="feedback_read_more_btn"> Читать полностью....</button>
+                       </div>
+                       
+                     <div class="feedback_slider_item_user_instagram_links_video_wrapper">
+                       <div class="feedback_slider_item_user_instagram_links_wrapper">
+                         <a href="@nyusha_nyusha" class="feedback_slider_item_user_instagram_link">
+                          <img src="../images/instagram_icon.svg" alt="">
+                          @nyusha_nyusha</a>
+                         <a href="@igorsivovv" class="feedback_slider_item_user_instagram_link">
+                           <img src="../images/instagram_icon.svg" alt="">
+                           @igorsivovv</a>
+                       </div>
+                        <a href="" class="slider_item_user_video_feedback">cмотреть видео-отзыв</a>  
+                      </div>
+                    </div>
+                    </div>
+                 </div>
+                 <div class="swiper-slide">
+                  <div class="feedbacks_slider_item">
+                     <div class="feedback_slider_item_img">
+                        <img src="../images/slider_img3.png" alt="">
+                     </div>
+                     <div class="feedback_slider_item_info_box">
+                     <p class="feedback_slider_item_title">Анна Хилькевич – актриса кино и телевидения</p>
+                     <div class="feedback_read_more_btn_info_wrapper">
+                      <p class="feedback_slider_item_info">Агентство LingvoNanny присылало мне огромное количество анкет с разными кандидатами на позицию домработницы, мы отсматривали их в большом количестве. Это единственное агентство, которое серьезно занималось моим запросом и благодаря которому мы нашли человека, который нам действительно подошел.</p>
+                       <button class="feedback_read_more_btn last_btn"> Читать полностью....</button>
+                    </div>
+                    
+                   <div class="feedback_slider_item_user_instagram_links_video_wrapper">
+                     <div class="feedback_slider_item_user_instagram_links_wrapper">
+                       <a href=" @annakhilkevich" class="feedback_slider_item_user_instagram_link">
+                        <img src="../images/instagram_icon.svg" alt="">
+                        @annakhilkevich</a>
+                       
+                     </div>
+                      <a href="" class="slider_item_user_video_feedback">cмотреть видео-отзыв</a>  
+                    </div>
+                  </div>
+                  </div>
+               </div>
+              </div>
+                
+           </div>
+           <div class="feedbacks_slider_btns">
+            <div class="swiper-button-prev feedback_btn_prev"></div>
+             <div class="swiper-button-next feedback_btn_next"></div>
+          </div>
+          <div class="submit_application_btn_wrapper">
+             <button class="submit_application_btn">ОСТАВИТЬ ЗАЯВКУ</button>
+          </div>
+           
+        </div>
+     </div>
+  </section>
+ 
+  <section class="working_conditions">
+   <div class="working_condition_img1">
+      <img src="../images/lingvo2.svg" alt="">
+   </div>
+   <div class="working_condition_img2">
+      <img src="../images/lingvo7.svg" alt="">
+   </div>
+   <div class="working_condition_img3">
+    <img src="../images/lingvo7.svg" alt="">
+ </div>
+ <div class="working_condition_img4">
+    <img src="../images/lingvo6.svg" alt="">
+ </div>
+ <div class="working_conditions_img5">
+    <img src="../images/Ellipse 81.svg" alt="">
+ </div>
+ <div class="working_conditions_img6">
+    <img src="../images/Star 11.svg" alt="">
+ </div>
+ <div class="working_conditions_img7">
+    <img src="../images/Star 12.svg" alt="">
+ </div>
+ <div class="working_conditions_img8">
+    <img src="../images/Ellipse 82.svg" alt="">
+ </div>
+     <div class="working_conditions_wrapper">
+         <div class="working_conditions_title_line_wrapper">
+            <h1 class="working_conditions_title">Условия работы агенства LingvoNanny</h1>
+            <div class="working_conditions_line"></div>
+         </div>
+         <div class="working_conditions_items_wrapper">
+             <div class="working_conditions_item first_working_condition_item">
+                 <div class="working_conditions_item_icon_info_wrapper">
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">Никаких предоплат</p>
+                     </div>
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">При подборе 2х и более кандидатов - скидка до 10%</p>
+                     </div>
+                 </div>
+                 <div class="working_conditions_item_icon_info_wrapper">
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">Неограниченное количество кандидатов на выбор</p>
+                     </div>
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">Гарантия замены в течении года</p>
+                     </div>
+                 </div>
+                 <div class="working_conditions_item_icon_info_wrapper">
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">3 бесплатных пробных дня с кандидатом</p>
+                     </div>
+                     <div class="working_conditions_item_icon_info_child">
+                        <div class="working_conditions_item_icon">
+                           <img src="../images/check_mark.svg" alt="">
+                        </div>
+                        <p class="working_conditions_item_info">Проверка благонадёжности, рекомендаций
+                           и безопасности</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="second_working_conditions_items">
+             <div class="working_conditions_item second_working_conditions_item">
+                 <p class="working_conditions_item_title">Комиссия агентства</p>
+                 <div class="second_working_conditions_icon_info_item">
+                     <div class="second_working_conditions_icon_info_child">
+                        <div class="second_working_conditions_item_icon">
+                           <img src="../images/icon_svg.svg" alt="">
+                        </div>
+                        <p class="second_working_conditions_child_info">Русский персонал
+                           и филипиннки:</p>
+                     </div>
+                     <div class="second_working_conditions_icon_info_child">
+                         <p class="second_working_conditions_child_info">1 месячный оклад</p>
+                     </div>
+                    
+                 </div>
+                 <div class="second_working_conditions_icon_info_item">
+                    <div class="second_working_conditions_icon_info_child">
+                       <div class="second_working_conditions_item_icon">
+                          <img src="../images/icon_svg.svg" alt="">
+                       </div>
+                       <p class="red_child_info">Иностранные няни:</p>
+                    </div>
+                    <div class="second_working_conditions_icon_info_child">
+                            <p class="red_child_info">частичная занятость 10%,
+                     полная занятость: от 15%
+                     от годового оклада</p>
+                    </div>
+               
+                 </div>
+                 <div class="second_working_conditions_icon_info_item">
+                     <div class="second_working_conditions_icon_info_child">
+                        <div class="second_working_conditions_item_icon">
+                           <img src="../images/icon_svg.svg" alt="">
+                        </div>
+                        <p class="second_working_conditions_child_info">Персонал за рубежом
+                           ( Европа/США/Азия ):</p>
+                     </div>
+                     <div class="second_working_conditions_icon_info_child">
+                        <p class="second_working_conditions_child_info">10% от годового <br> оклада</p>
+                     </div>
+                     
+                 </div>
+             </div>
+             <div class="second_working_conditions_item">
+                <p class="working_conditions_title_second">Условия работы нянь/гувернанток:</p>
+                <div class="working_conditions_for_nannies_items_wrapper">
+                    <div class="working_conditions_for_nannies_item_childs">
+                        <div class="working_conditions_for_nannies_item">
+                            <p class="working_conditions_for_nannies_item_info">Няни уже в РФ или специально привезём для Вас</p>
+                            <p class="working_conditions_for_nannies_item_num">1</p>
+                        </div>
+                        <div class="working_conditions_for_nannies_item">
+                            <p class="working_conditions_for_nannies_item_info">С проживанием 
+                                или без него</p>
+                            <p class="working_conditions_for_nannies_item_num">2</p>
+                        </div>
+                    </div>
+                    <div class="working_conditions_for_nannies_item_childs">
+                        <div class="working_conditions_for_nannies_item">
+                            <p class="working_conditions_for_nannies_item_info">
+                                От 2000  до 6000 руб/час
+                            </p>
+                            <p class="working_conditions_for_nannies_item_num">3</p>
+                        </div>
+                        
+                    </div>
+                    <div class="working_conditions_for_nannies_item_childs">
+                        <div class="working_conditions_for_nannies_item">
+                            <p class="working_conditions_for_nannies_item_info">полное визовое сопровождение
+                                от агентства</p>
+                            <p class="working_conditions_for_nannies_item_num">4</p>
+                        </div>
+                        <div class="working_conditions_for_nannies_item">
+                            <p class="working_conditions_for_nannies_item_info">
+                                Различные 
+                             варинаты рабочей недели:
+                            4-20 часов/неделю
+                              8 часов в день
+                              вахта 7/7-30/30 дней
+
+                            </p>
+                            <p class="working_conditions_for_nannies_item_num">5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_working_conditions_for_nannies_items_wrapper">
+                 
+                      <div class="working_conditions_for_nannies_item">
+                          <p class="working_conditions_for_nannies_item_info">Няни уже в РФ или специально привезём для Вас</p>
+                          <p class="working_conditions_for_nannies_item_num">1</p>
+                      </div>
+                      <div class="working_conditions_for_nannies_item">
+                          <p class="working_conditions_for_nannies_item_info">С проживанием 
+                              или без него</p>
+                          <p class="working_conditions_for_nannies_item_num">2</p>
+                      </div>
+                  
+                  
+                      <div class="working_conditions_for_nannies_item">
+                          <p class="working_conditions_for_nannies_item_info">
+                              От 2000  до 6000 руб/час
+                          </p>
+                          <p class="working_conditions_for_nannies_item_num">3</p>
+                      </div>
+                      
+                  
+                  
+                      <div class="working_conditions_for_nannies_item">
+                          <p class="working_conditions_for_nannies_item_info">полное визовое сопровождение
+                              от агентства</p>
+                          <p class="working_conditions_for_nannies_item_num">4</p>
+                      </div>
+                      <div class="working_conditions_for_nannies_item">
+                          <p class="working_conditions_for_nannies_item_info">
+                              Различные 
+                           варинаты рабочей недели:
+                          4-20 часов/неделю
+                            8 часов в день
+                            вахта 7/7-30/30 дней
+
+                          </p>
+                          <p class="working_conditions_for_nannies_item_num">5</p>
+                      </div>
+                  
+              </div>
+             </div>
+             </div>
+         </div>
+     </div>
+  </section>
+  <section class="our_candidates">
+      <div class="our_candidates_wrapper">
+          <div class="our_candidates_img">
+              <img src="../images/star.svg" alt="">
+          </div>
+          <div class="our_candidates_img2">
+             <img src="../images/Ellipse 84.svg" alt="">
+          </div>
+          <div class="our_candidates_title_line_wrapper">
+               <h1 class="our_candidates_title">Наши кандидаты</h1>
+               <div class="our_candidates_line"></div>
+          </div>
+          <div class="our_candidates_items_wrapper">
+              <div class="our_candidates_item">
+                  <div class="our_candidates_item_img">
+
+                  </div>
+                  <div class="our_candidates_item_info_box">
+                       <div class="our_candidates_item_name_age_wrapper">
+                               <p class="our_candidates_item_name">
+                                 Имя: <span>Ruth</span> 
+                               </p>
+                               <p class="our_candidates_item_age">
+                                 Возраст: <span>32 года</span> 
+                               </p>
+                       </div>
+                       <div class="our_candidates_item_country">
+                           <p class="our_candidates_item_country_name">Гувернантка из Великобритании</p>
+                           <div class="our_candidates_item_country_flag">
+                               <img src="../images/united_kingdom2.svg" alt="">
+                           </div>
+                       </div>
+                       <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 7 лет работы с детьми</span> </p>
+                       <p class="our_candidates_item_education">
+                        Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                        как иностранному языку</span>
+                       </p>
+                       <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                        Русский - средний</span> </p>
+                        <p class="our_candidates_item_info">
+                            Прекрасные рекомендации,
+                            отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                        </p>
+                  </div>
+                  <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+              </div>
+              <div class="our_candidates_item">
+                <div class="our_candidates_item_img">
+
+                </div>
+                <div class="our_candidates_item_info_box">
+                    <div class="our_candidates_item_name_age_wrapper">
+                            <p class="our_candidates_item_name">
+                              Имя: <span>Mike</span> 
+                            </p>
+                            <p class="our_candidates_item_age">
+                              Возраст: <span>46 лет</span> 
+                            </p>
+                    </div>
+                    <div class="our_candidates_item_country">
+                        <p class="our_candidates_item_country_name">Гувернант из Великобритании</p>
+                        <div class="our_candidates_item_country_flag">
+                            <img src="../images/united_kingdom2.svg" alt="">
+                        </div>
+                    </div>
+                    <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 15 лет работы с детьми</span> </p>
+             
+                    <p class="our_candidates_item_education">
+                     Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                     как иностранному языку</span>
+                    </p>
+                    <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                     Русский - средний</span> </p>
+                     <p class="our_candidates_item_info">
+                         Прекрасные рекомендации,
+                         отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                     </p>
+               </div>
+               <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+              </div>
+              <div class="our_candidates_item">
+                <div class="our_candidates_item_img">
+
+                </div>
+                <div class="our_candidates_item_info_box">
+                    <div class="our_candidates_item_name_age_wrapper">
+                            <p class="our_candidates_item_name">
+                              Имя: <span>Mackenzie</span>  
+                            </p>
+                            <p class="our_candidates_item_age">
+                              Возраст: <span>31 год</span> 
+                            </p>
+                    </div>
+                    <div class="our_candidates_item_country">
+                        <p class="our_candidates_item_country_name">Гувернант из Великобритании</p>
+                        <div class="our_candidates_item_country_flag">
+                            <img src="../images/united_kingdom2.svg" alt="">
+                        </div>
+                    </div>
+                    <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 6 лет работы с детьми</span> </p>
+                   
+                    <p class="our_candidates_item_education">
+                     Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                     как иностранному языку</span>
+                    </p>
+                    <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                     Русский - средний</span> </p>
+                     <p class="our_candidates_item_info">
+                         Прекрасные рекомендации,
+                         отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                     </p>
+               </div>
+               <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+              </div>
+          </div>
+          <div class="our_candidates_item_btns_wrapper">
+            <!-- Slider main container -->
+              <div class="swiper" id="our_candidates_item_slider">
+                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                       <div class="our_candidates_item">
+                     <div class="our_candidates_item_img">
+   
+                     </div>
+                     <div class="our_candidates_item_info_box">
+                          <div class="our_candidates_item_name_age_wrapper">
+                                  <p class="our_candidates_item_name">
+                                    Имя: <span>Ruth</span> 
+                                  </p>
+                                  <p class="our_candidates_item_age">
+                                    Возраст: <span>32 года</span> 
+                                  </p>
+                          </div>
+                          <div class="our_candidates_item_country">
+                              <p class="our_candidates_item_country_name">Гувернантка из Великобритании</p>
+                              <div class="our_candidates_item_country_flag">
+                                  <img src="../images/united_kingdom2.svg" alt="">
+                              </div>
+                          </div>
+                          <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 7 лет работы с детьми</span> </p>
+                          <p class="our_candidates_item_education">
+                           Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                           как иностранному языку</span>
+                          </p>
+                          <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                           Русский - средний</span> </p>
+                           <p class="our_candidates_item_info">
+                               Прекрасные рекомендации,
+                               отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                           </p>
+                     </div>
+                     <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+                 </div>
+                    </div>
+                    <div class="swiper-slide">
+                     <div class="our_candidates_item">
+                        <div class="our_candidates_item_img">
+        
+                        </div>
+                        <div class="our_candidates_item_info_box">
+                            <div class="our_candidates_item_name_age_wrapper">
+                                    <p class="our_candidates_item_name">
+                                      Имя: <span>Mike</span> 
+                                    </p>
+                                    <p class="our_candidates_item_age">
+                                      Возраст: <span>46 лет</span> 
+                                    </p>
+                            </div>
+                            <div class="our_candidates_item_country">
+                                <p class="our_candidates_item_country_name">Гувернант из Великобритании</p>
+                                <div class="our_candidates_item_country_flag">
+                                    <img src="../images/united_kingdom2.svg" alt="">
+                                </div>
+                            </div>
+                            <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 15 лет работы с детьми</span> </p>
+                     
+                            <p class="our_candidates_item_education">
+                             Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                             как иностранному языку</span>
+                            </p>
+                            <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                             Русский - средний</span> </p>
+                             <p class="our_candidates_item_info">
+                                 Прекрасные рекомендации,
+                                 отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                             </p>
+                       </div>
+                       <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+                      </div>
+                    </div>
+                     
+                    <div class="swiper-slide">
+                     <div class="our_candidates_item">
+                        <div class="our_candidates_item_img">
+        
+                        </div>
+                        <div class="our_candidates_item_info_box">
+                            <div class="our_candidates_item_name_age_wrapper">
+                                    <p class="our_candidates_item_name">
+                                      Имя: <span>Mackenzie</span>  
+                                    </p>
+                                    <p class="our_candidates_item_age">
+                                      Возраст: <span>31 год</span> 
+                                    </p>
+                            </div>
+                            <div class="our_candidates_item_country">
+                                <p class="our_candidates_item_country_name">Гувернант из Великобритании</p>
+                                <div class="our_candidates_item_country_flag">
+                                    <img src="../images/united_kingdom2.svg" alt="">
+                                </div>
+                            </div>
+                            <p class="our_candidates_item_experiance">Профессиональный опыт: <span>более 6 лет работы с детьми</span> </p>
+                           
+                            <p class="our_candidates_item_education">
+                             Образование: <span> педагогическое образование и престижные профильные сертификаты по обучению английскому,
+                             как иностранному языку</span>
+                            </p>
+                            <p class="our_candidates_item_languages">Языки: <span> Английский - родной, Итальянский - свободный,
+                             Русский - средний</span> </p>
+                             <p class="our_candidates_item_info">
+                                 Прекрасные рекомендации,
+                                 отлично ладит с детьми, занимается английским как в игровой так и более академической форме, дети легко и быстро достигают с ней результатов в изучении английскогоs
+                             </p>
+                       </div>
+                       <button class="more_about_candidates_btn">Подробнее о кандидате...</button>
+                      </div>
+                    </div>
+                
+                </div>
+                  
+             </div>
+             <div class="our_candidates_item_slider_btns">
+              <div class="swiper-button-prev our_candidates_item_btn_prev"></div>
+               <div class="swiper-button-next our_candidates_item_btn_next"></div>
+            </div>
+          </div>
+         
+      </div>
+  </section>
+  <section class="have_questions">
+     <div class="have_questions_wrapper">
+      <div class="have_questions_img20">
+         <img src="../images/Ellipse 83.svg" alt="">
+      </div>
+        <div class="have_questions_items_wrapper">
+           <div class="have_questions_item">
+               <form action="" class="have_questions_form">
+                  <h1 class="have_questions_form_title">Остались вопросы?</h1>
+                  <p class="have_questions_form_info">Оставьте заявку и наш менеджер на них ответит. Или подпишитесь на наш <a href="">Instagram</a> </p>
+                   <div class="have_questions_form_input_field">
+                      <input type="text" class="have_questions_form_input" placeholder="Ваше имя">
+                   </div>
+                   <div class="have_questions_form_input_field">
+                      <input type="text" class="have_questions_form_input" placeholder="Телефон">
+                   </div>
+                   <div class="have_questions_form_input_field textarea_form">
+                      <textarea class="have_questions_form_textarea" placeholder="Ваше сообщение"></textarea>
+                   </div>
+                   <p class="have_questions_form_info2">
+                     Нажимая кнопку , я принимаю условия <a href="">Политики конфиденциальности</a>  и даю согласие на обработку моих персональных данных.
+                   </p>
+                 <button class="have_questions_form_btn">Оставить заявку на подбор персонала</button>
+
+               </form>
+           </div>
+           <div class="have_questions_item">
+              <div class="have_questions_item_first_img1">
+                 <img src="../images/form_img1.png" alt="">
+              </div>
+              <div class="have_questions_item_img2">
+                 <img src="../images/form_img2.png" alt="">
+              </div>
+           </div>
+        </div>
+        
+     </div>
+  </section>
+  <section class="other_directions_our_activities">
+      <div class="other_directions_our_activities_wrapper">
+         <div class="other_directions_our_activities_info_items_wrpper">
+             <div class="other_directions_our_activities_info_item">
+                <p class="other_directions_our_activities_info_title">
+                  Другие направления 
+                  нашей деятельности:
+                </p>
+             </div>
+             <div class="other_directions_our_activities_info_item">
+               <a href="" class="other_directions_our_activities_link">Иностранные гувернантки</a>
+               <a href="" class="other_directions_our_activities_link"> Домашний персонал</a>
+             </div>
+         </div>
+      </div>
+  </section>
+  <section class="contacts">
+   <div class="mobile_footer_wrapper">
+      <div class="mobile_footer_title_line_wrapper">
+          <h1 class="mobile_footer_title">Контакты</h1>
+          <div class="mobile_footer_line"></div>
+      </div>
+      <div class="phone_info"> 
+         <h2 class="mobile_footer_second_title">Телефон</h2>
+        <div class="contacts_versions">
+
+         <div class="contacts_for_clients">
+            <p class="contacts_for_user_title">Для клиентов:</p>
+            <div class="contacts_for_user_social_link">
+               <p class="contacts_for_user_social_link_info">+7 (495) 120-30-55</p>
+              <a href="https://www.whatsapp.com/" class="contacts_for_user_social_link_whatsapp">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M23.9196 4.074C21.2884 1.442 17.7849 0 14.0563 0C6.37387 0 0.112563 6.23 0.112563 13.874C0.112563 16.324 0.759799 18.704 1.96985 20.804L0 28L7.38693 26.068C9.42714 27.174 11.7206 27.762 14.0563 27.762C21.7387 27.762 28 21.532 28 13.888C28 10.178 26.5508 6.692 23.9196 4.074ZM14.0563 25.41C11.9739 25.41 9.93367 24.85 8.14673 23.8L7.72462 23.548L3.33467 24.696L4.50251 20.44L4.22111 20.006C3.06734 18.172 2.44824 16.044 2.44824 13.874C2.44824 7.518 7.65427 2.338 14.0422 2.338C17.1377 2.338 20.0503 3.542 22.2312 5.726C24.4261 7.91 25.6221 10.808 25.6221 13.888C25.6503 20.244 20.4442 25.41 14.0563 25.41ZM20.4161 16.786C20.0643 16.618 18.3477 15.778 18.0382 15.652C17.7146 15.54 17.4894 15.484 17.2502 15.82C17.0111 16.17 16.3497 16.954 16.1528 17.178C15.9558 17.416 15.7447 17.444 15.393 17.262C15.0412 17.094 13.9156 16.716 12.593 15.54C11.5518 14.616 10.8623 13.482 10.6513 13.132C10.4543 12.782 10.6231 12.6 10.806 12.418C10.9608 12.264 11.1578 12.012 11.3266 11.816C11.4955 11.62 11.5658 11.466 11.6784 11.242C11.791 11.004 11.7347 10.808 11.6503 10.64C11.5658 10.472 10.8623 8.764 10.5809 8.064C10.2995 7.392 10.004 7.476 9.79296 7.462C9.58191 7.462 9.35678 7.462 9.11759 7.462C8.87839 7.462 8.51256 7.546 8.18894 7.896C7.8794 8.246 6.97889 9.086 6.97889 10.794C6.97889 12.502 8.23116 14.154 8.4 14.378C8.56884 14.616 10.8623 18.116 14.3518 19.614C15.1819 19.978 15.8291 20.188 16.3357 20.342C17.1658 20.608 17.9256 20.566 18.5307 20.482C19.206 20.384 20.599 19.642 20.8804 18.83C21.1759 18.018 21.1759 17.332 21.0774 17.178C20.9789 17.024 20.7678 16.954 20.4161 16.786Z" fill="#4968A6"/>
+                </svg> 
+                Написать нам</a>
+
+             
+            </div>
+            
+       
+         </div>
+         <div class="contacts_for_candidates">
+          <p class="contacts_for_user_title">Для кандидатов:</p>
+          <div class="contacts_for_user_social_link">
+             <p class="contacts_for_user_social_link_info">+7 (936) 444-11-48</p>
+            <a href="https://www.whatsapp.com/" class="contacts_for_user_social_link_whatsapp">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M23.9196 4.074C21.2884 1.442 17.7849 0 14.0563 0C6.37387 0 0.112563 6.23 0.112563 13.874C0.112563 16.324 0.759799 18.704 1.96985 20.804L0 28L7.38693 26.068C9.42714 27.174 11.7206 27.762 14.0563 27.762C21.7387 27.762 28 21.532 28 13.888C28 10.178 26.5508 6.692 23.9196 4.074ZM14.0563 25.41C11.9739 25.41 9.93367 24.85 8.14673 23.8L7.72462 23.548L3.33467 24.696L4.50251 20.44L4.22111 20.006C3.06734 18.172 2.44824 16.044 2.44824 13.874C2.44824 7.518 7.65427 2.338 14.0422 2.338C17.1377 2.338 20.0503 3.542 22.2312 5.726C24.4261 7.91 25.6221 10.808 25.6221 13.888C25.6503 20.244 20.4442 25.41 14.0563 25.41ZM20.4161 16.786C20.0643 16.618 18.3477 15.778 18.0382 15.652C17.7146 15.54 17.4894 15.484 17.2502 15.82C17.0111 16.17 16.3497 16.954 16.1528 17.178C15.9558 17.416 15.7447 17.444 15.393 17.262C15.0412 17.094 13.9156 16.716 12.593 15.54C11.5518 14.616 10.8623 13.482 10.6513 13.132C10.4543 12.782 10.6231 12.6 10.806 12.418C10.9608 12.264 11.1578 12.012 11.3266 11.816C11.4955 11.62 11.5658 11.466 11.6784 11.242C11.791 11.004 11.7347 10.808 11.6503 10.64C11.5658 10.472 10.8623 8.764 10.5809 8.064C10.2995 7.392 10.004 7.476 9.79296 7.462C9.58191 7.462 9.35678 7.462 9.11759 7.462C8.87839 7.462 8.51256 7.546 8.18894 7.896C7.8794 8.246 6.97889 9.086 6.97889 10.794C6.97889 12.502 8.23116 14.154 8.4 14.378C8.56884 14.616 10.8623 18.116 14.3518 19.614C15.1819 19.978 15.8291 20.188 16.3357 20.342C17.1658 20.608 17.9256 20.566 18.5307 20.482C19.206 20.384 20.599 19.642 20.8804 18.83C21.1759 18.018 21.1759 17.332 21.0774 17.178C20.9789 17.024 20.7678 16.954 20.4161 16.786Z" fill="#4968A6"/>
+              </svg> 
+              Написать нам</a>
+
+           
+          </div>
+         </div>
+         </div>
+       </div>
+       <div class="footer_social_links"> 
+            <h2 class="footer_social_link_title">Социальные сети</h2>
+            <a href="" class="footer_social_link">
+               <img src="../images/facebook 1.svg" alt="">
+               Facebook</a>
+            <a href="" class="footer_social_link">
+               <img src="../images/inst_icon.svg" alt="">
+               Instagram</a>
+       </div>
+       <div class="footer_address_info_box">
+         <h2 class="footer_address_title">Адрес</h2>
+         <p class="footer_address_info">
+            г. Москва, Каланчевская улица 
+         </p>
+         <p class="footer_address_info">16 ст. м. Комсомольсковая</p>
+        </div>
+        <h2 class="footer_address_title">Карта </h2>
+        <div class="footer_logo_item">
+         <a href="" class="footer_logo_item_link">
+            <img src="../images/footer_logo.svg" alt="">
+         </a>
+      </div>
+    
+   </div>
+   <div id="map" style=" width: 100%;  height: 697px" ></div>
+      <div class="contacts_wrapper">
+          <div class="contacts_info_box">
+             <h1 class="contacts_title">Как нас найти</h1>
+             <div class="contacts_line"></div>
+             <p class="contacts_info">г. Москва, Каланчевская улица 16 стр.1  ст. м. Комсомольсковая</p>
+             <div class="contacts_versions">
+
+                 <div class="contacts_for_clients">
+                    <p class="contacts_for_user_title">Для клиентов:</p>
+                    <div class="contacts_for_user_social_link">
+                       <p class="contacts_for_user_social_link_info">+7 (495) 120-30-55</p>
+                      <a href="https://www.whatsapp.com/" class="contacts_for_user_social_link_whatsapp">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M23.9196 4.074C21.2884 1.442 17.7849 0 14.0563 0C6.37387 0 0.112563 6.23 0.112563 13.874C0.112563 16.324 0.759799 18.704 1.96985 20.804L0 28L7.38693 26.068C9.42714 27.174 11.7206 27.762 14.0563 27.762C21.7387 27.762 28 21.532 28 13.888C28 10.178 26.5508 6.692 23.9196 4.074ZM14.0563 25.41C11.9739 25.41 9.93367 24.85 8.14673 23.8L7.72462 23.548L3.33467 24.696L4.50251 20.44L4.22111 20.006C3.06734 18.172 2.44824 16.044 2.44824 13.874C2.44824 7.518 7.65427 2.338 14.0422 2.338C17.1377 2.338 20.0503 3.542 22.2312 5.726C24.4261 7.91 25.6221 10.808 25.6221 13.888C25.6503 20.244 20.4442 25.41 14.0563 25.41ZM20.4161 16.786C20.0643 16.618 18.3477 15.778 18.0382 15.652C17.7146 15.54 17.4894 15.484 17.2502 15.82C17.0111 16.17 16.3497 16.954 16.1528 17.178C15.9558 17.416 15.7447 17.444 15.393 17.262C15.0412 17.094 13.9156 16.716 12.593 15.54C11.5518 14.616 10.8623 13.482 10.6513 13.132C10.4543 12.782 10.6231 12.6 10.806 12.418C10.9608 12.264 11.1578 12.012 11.3266 11.816C11.4955 11.62 11.5658 11.466 11.6784 11.242C11.791 11.004 11.7347 10.808 11.6503 10.64C11.5658 10.472 10.8623 8.764 10.5809 8.064C10.2995 7.392 10.004 7.476 9.79296 7.462C9.58191 7.462 9.35678 7.462 9.11759 7.462C8.87839 7.462 8.51256 7.546 8.18894 7.896C7.8794 8.246 6.97889 9.086 6.97889 10.794C6.97889 12.502 8.23116 14.154 8.4 14.378C8.56884 14.616 10.8623 18.116 14.3518 19.614C15.1819 19.978 15.8291 20.188 16.3357 20.342C17.1658 20.608 17.9256 20.566 18.5307 20.482C19.206 20.384 20.599 19.642 20.8804 18.83C21.1759 18.018 21.1759 17.332 21.0774 17.178C20.9789 17.024 20.7678 16.954 20.4161 16.786Z" fill="#4968A6"/>
+                        </svg> 
+                        Написать нам</a>
+
+                     
+                    </div>
+                    <div class="contacts_for_user_gmail">
+                       <p class="contacts_for_user_gmail_info">ds@lingvonanny.ru</p>
+                        <a href="mailto:ds@lingvonanny.ru" class="contacts_for_user_gmail_link">Написать письмо</a>
+                    </div>
+                    <a href="" class="cart_link">Увеличить карту</a>
+               
+                 </div>
+                 <div class="contacts_for_candidates">
+                  <p class="contacts_for_user_title">Для кандидатов:</p>
+                  <div class="contacts_for_user_social_link">
+                     <p class="contacts_for_user_social_link_info">+7 (936) 444-11-48</p>
+                    <a href="https://www.whatsapp.com/" class="contacts_for_user_social_link_whatsapp">
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M23.9196 4.074C21.2884 1.442 17.7849 0 14.0563 0C6.37387 0 0.112563 6.23 0.112563 13.874C0.112563 16.324 0.759799 18.704 1.96985 20.804L0 28L7.38693 26.068C9.42714 27.174 11.7206 27.762 14.0563 27.762C21.7387 27.762 28 21.532 28 13.888C28 10.178 26.5508 6.692 23.9196 4.074ZM14.0563 25.41C11.9739 25.41 9.93367 24.85 8.14673 23.8L7.72462 23.548L3.33467 24.696L4.50251 20.44L4.22111 20.006C3.06734 18.172 2.44824 16.044 2.44824 13.874C2.44824 7.518 7.65427 2.338 14.0422 2.338C17.1377 2.338 20.0503 3.542 22.2312 5.726C24.4261 7.91 25.6221 10.808 25.6221 13.888C25.6503 20.244 20.4442 25.41 14.0563 25.41ZM20.4161 16.786C20.0643 16.618 18.3477 15.778 18.0382 15.652C17.7146 15.54 17.4894 15.484 17.2502 15.82C17.0111 16.17 16.3497 16.954 16.1528 17.178C15.9558 17.416 15.7447 17.444 15.393 17.262C15.0412 17.094 13.9156 16.716 12.593 15.54C11.5518 14.616 10.8623 13.482 10.6513 13.132C10.4543 12.782 10.6231 12.6 10.806 12.418C10.9608 12.264 11.1578 12.012 11.3266 11.816C11.4955 11.62 11.5658 11.466 11.6784 11.242C11.791 11.004 11.7347 10.808 11.6503 10.64C11.5658 10.472 10.8623 8.764 10.5809 8.064C10.2995 7.392 10.004 7.476 9.79296 7.462C9.58191 7.462 9.35678 7.462 9.11759 7.462C8.87839 7.462 8.51256 7.546 8.18894 7.896C7.8794 8.246 6.97889 9.086 6.97889 10.794C6.97889 12.502 8.23116 14.154 8.4 14.378C8.56884 14.616 10.8623 18.116 14.3518 19.614C15.1819 19.978 15.8291 20.188 16.3357 20.342C17.1658 20.608 17.9256 20.566 18.5307 20.482C19.206 20.384 20.599 19.642 20.8804 18.83C21.1759 18.018 21.1759 17.332 21.0774 17.178C20.9789 17.024 20.7678 16.954 20.4161 16.786Z" fill="#4968A6"/>
+                      </svg> 
+                      Написать нам</a>
+
+                   
+                  </div>
+                 </div>
+             </div>
+             <div class="contacts_line"></div>
+             <div class="get_directions_info_icon">
+                <p class="get_directions_info">Проложить маршрут</p>
+                <div class="get_direction_icon">
+                   <img src="../images/contacts_img.svg" alt="">
+                </div>
+             </div>
+          </div>
+      </div>
+  </section>
+</main>
+<footer class="footer">
+   <div class="footer_wrapper">
+    <div class="footer_items_wrapper">
+        <div class="footer_item">
+           <div class="footer_logo_item">
+              <a href="" class="footer_logo_item_link">
+                 <img src="../images/footer_logo.svg" alt="">
+              </a>
+           </div>
+           <nav class="footer_nav">
+              <ul class="footer_ul_list">
+                 <li class="footer_ul_li">
+                  <a href="" class="footer_ul_link">Русские няни </a> 
+                 </li>
+                 <li class="footer_ul_li">
+                  <a href="" class="footer_ul_link">Домашний персонал</a>
+                  
+                 </li>
+                 <li class="footer_ul_li">
+                  <a href="" class="footer_ul_link">Преимущества</a>
+                  
+                 </li>
+                 <li class="footer_ul_li">
+                  <a href="" class="footer_ul_link">Отзывы</a>
+                  
+                 </li>
+                 <li class="footer_ul_li">
+                  <a href="" class="footer_ul_link">Контакты</a>
+                  
+                 </li>
+              </ul>
+           </nav>
+        </div>
+        <div class="footer_item">
+           <div class="footer_social_links_wrapper">
+            <a href="" class="footer_social_link">
+               <img src="../images/instagram_icon1.svg" alt="">
+               Instagram
+            </a>
+            <a href="" class="footer_social_link">
+               <img src="../images/whatsapp_icon.svg" alt="">
+               Whatsapp
+            </a>
+            <a href="" class="footer_social_link">
+               <img src="../images/telegram_icon.svg" alt="">
+               Telegram
+            </a>
+            
+            
+            
+           </div>
+           <div class="footer_address_info_box">
+                  <p class="footer_address_title">Адрес</p>
+                  <p class="footer_address_info">
+                     г. Москва, Каланчевская улица 16 ст. м. Комсомольсковая
+                  </p>
+           </div>
+        </div>
+    </div>
+   </div>
+</footer>
+</div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+    
+</body>
+</html>
